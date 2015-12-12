@@ -1,59 +1,35 @@
-require 'pry'
+require './alphabet.rb'
+require './upper_case.rb'
+require './lower_case.rb'
 
 class CeasarCipher
 	attr_accessor :text, :new_string, :offset
-
 
 	def initialize(text, offset)
 		@text = text.to_s.split(//)
 		@offset = offset.to_i
 		@new_string = []
+		@letter_upper = UpperCase.new
+		@letter_lower = LowerCase.new
 	end
-
 	
 	def encrypt
 		@text.each do |char|
-			if char == " " || char == "," || char == "." || char == "!"
+			if punctuation(char)
 				@new_string << char
 			elsif char ==	char.upcase
-				alph = alphabet_upper["#{char}"].to_i
-				alph = alph + @offset
-				if alph > 26
-					alph = alph - 26
-				else
-					alph = alph
-				end
-				@new_string << alphabet_upper.key(alph.to_s)				
+				@new_string << @letter_upper.execute(char, offset)			
 			else				
-				alph = alphabet["#{char}"].to_i
-				alph = alph + @offset
-				if alph > 26
-					alph = alph - 26
-				else
-					alph = alph
-				end
-				@new_string << alphabet.key(alph.to_s)
+				@new_string << @letter_lower.execute(char, offset)
 			end
 		end
-
 	@new_string = @new_string.join()
-
-		return "Your encrypted message is:  #{@new_string}"
+	return "Your encrypted message is:  #{@new_string}"
 	end
 
 	private
-#lower case alphabet hash
-	def alphabet
-		num = 0
-		Hash[('a'..'z').map do|char|
-			[char, "#{num+=1}"]
-		end]
-	end
-#upper case alphabet hash
-	def alphabet_upper
-		num = 0
-		Hash[('A'..'Z').map do |char|
-			[char, "#{num+=1}"]
-		end]
-	end
+
+	def punctuation(char)
+		char == " " || char == "," || char == "." || char == "!" || char == "?"
+	end		
 end
