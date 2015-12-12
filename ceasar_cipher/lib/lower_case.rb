@@ -1,5 +1,4 @@
-require './alphabet.rb'
-require './ceasar_cipher.rb'
+require_relative 'alphabet'
 
 class LowerCase
 	attr_accessor :alph_lower

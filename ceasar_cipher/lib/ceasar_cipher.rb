@@ -1,6 +1,6 @@
-require '~/Desktop/OdinProject/ceasar_cipher/lib/alphabet.rb'
-require '~/Desktop/OdinProject/ceasar_cipher/lib/upper_case.rb'
-require '~/Desktop/OdinProject/ceasar_cipher/lib/lower_case.rb'
+require_relative 'alphabet'
+require_relative 'upper_case'
+require_relative 'lower_case'
 
 class CeasarCipher
 	attr_accessor :text, :new_string, :offset
