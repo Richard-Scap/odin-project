@@ -2,22 +2,45 @@ require 'pry'
 
 class BubbleSort
 
+	attr_accessor :arr, :swap, :i, :words
+	attr_reader :n, :m
 
-
-	arr = [1,4,3,7,8,2,4,9,0,3]
-	swap = nil
-	n = arr.length
-	i = 0
-
-	while i < n do
-		arr.each_with_index do | num, index |
-			if index == 0
-				swap = false				
-			elsif arr[index-1] > arr[index]
-				arr[index-1], arr[index] = arr[index], arr[index-1]					
-			end
-		end
-		i = i+1
+	def initialize   							
+		@arr = [1,4,2,5,3,4,9,2,7]        
+		@words =['hi','hello','hey']      
+		@swap = nil
+		@n = arr.length
+		@m = words.length
+		@i = 0
+		@swap = nil	
 	end
-	print arr
+
+	def bubble_sort
+		while i < n do
+			arr.each_with_index do | num, index |
+					if index == 0
+						swap = false				
+					elsif arr[index-1] > arr[index]
+						arr[index-1], arr[index] = arr[index], arr[index-1]					
+					end
+			end
+			i += 1 
+		end
+		return arr
+	end
+
+	def bubble_sort_by
+		while i < m do
+			words.each_with_index do | num, index |
+				if index == 0
+					swap = false
+				elsif words[index-1].length > words[index].length
+					words[index-1], words[index] = words[index], words[index-1]
+				end
+			end
+			i += 1
+		end
+		return words
+	end
+
 end
