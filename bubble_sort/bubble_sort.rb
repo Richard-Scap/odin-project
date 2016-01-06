@@ -24,9 +24,9 @@ class BubbleSort
 						arr[index-1], arr[index] = arr[index], arr[index-1]					
 					end
 			end
-			i += 1 
+			@i = i + 1
 		end
-		return arr
+		arr
 	end
 
 	def bubble_sort_by
@@ -38,9 +38,9 @@ class BubbleSort
 					words[index-1], words[index] = words[index], words[index-1]
 				end
 			end
-			i += 1
+			@i = i + 1
 		end
-		return words
+		words
 	end
 
 end
