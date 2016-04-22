@@ -11,9 +11,9 @@ class LowerCase
 		alph = alph_lower[char]
 		alph = alph + offset
 		if alph > 25
-				alph = alph - 25
+			alph = alph - 25
 		else
-				alph = alph
+			alph = alph
 		end
 		return alph_lower.key(alph)
 	end

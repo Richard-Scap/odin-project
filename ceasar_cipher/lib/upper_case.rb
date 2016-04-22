@@ -11,9 +11,9 @@ class UpperCase
 		alph = alph_upper[char]
 		alph = alph + offset
 		if alph > 25
-				alph = alph - 25
+			alph = alph - 25
 		else
-				alph = alph
+			alph = alph
 		end
 		return alph_upper.key(alph)
 	end
