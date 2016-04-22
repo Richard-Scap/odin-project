@@ -2,6 +2,7 @@ require_relative 'alphabet'
 require_relative 'upper_case'
 require_relative 'lower_case'
 
+
 class CeasarCipher
 	attr_accessor :text, :new_string, :offset
 	attr_reader :letter_upper, :letter_lower
@@ -29,7 +30,6 @@ class CeasarCipher
 	end
 
 	private
-
 	def punctuation(char)
 		char == " " || char == "," || char == "." || char == "!" || char == "?"
 	end		
