@@ -10,7 +10,6 @@ class BubbleSort
 
 	def sort	
 		while i < arr.length do
-
 			arr.each_with_index do | num, index |
 				next if index == 0
 				if arr[index-1] > arr[index]
